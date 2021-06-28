@@ -107,3 +107,20 @@ Usage:
 ```
 
 `--sort_script` full path to sort_vcf_by_fasta.py can be provided. If this parameter is not used sort_vcf_by_fasta.py should be located in the working directory.
+
+## 1.4.1 sort_vcf_by_fasta.py
+This script sorts a vcf file based on a reference genome sequence. 
+
+```
+Usage:
+  python sort_vcf_by_fasta.py --vcf <FILE> --fasta <FILE> --output <FILE>
+
+  Mandatory:
+  
+  Inputs  
+  --vcf           STR   vcf file to be sorted by chromosomal position
+  --fasta         STR   path to reference genome sequence fasta file
+          
+  Output file
+  --out           STR   output file, which is a sorted vcf file
+```
