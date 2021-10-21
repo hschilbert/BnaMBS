@@ -124,3 +124,15 @@ Usage:
   Output file
   --out           STR   output file, which is a sorted vcf file
 ```
+### 2 PAV
+
+The scripts belonging to the idetification of presence absence variants are marked with a 2., they should be applied in the listed order.
+
+## 2.1 PAV_finder.py
+This script identifies PAVs. First, the average coverage per gene region per pool was calculated by calculating the mean of all coverage values per gene region. Next, a minimum coverage cut off was applied (-mincov 10) by ensuring that the sum of the average coverage for each gene region of both pools need to be greater than 10. This step was done to insure that the gene region is present in at least one pool. If no coverage was detected for one gene region of one pool, the coverage was set to 0.01. The average coverage was then normalized to the overall coverage of a sample by dividing through the median of all mean coverage values of a sample. Next, the log2 of the normalized coverage values of one gene region derived from both pools was calculated. Then high quality PAVs were extracted by filtering with an absolute value of log2(normalized coverage of gene region X of pool 1 / normalized coverage of gene region X of pool 2) > 1 and an absolute z score of > 1.5 and the normalized coverage value of at least one pool must be < 0.4 to insure a very low coverage alias absence of this gene region (github PAV_parser_genes.py)
+
+```
+Usage:
+  python PAV_finder.py 
+
+```
