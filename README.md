@@ -136,3 +136,24 @@ Usage:
   python PAV_finder.py 
 
 ```
+
+### 3.1 RNA-Seq
+
+The scripts belonging to the RNA-Seq analysis are presented here, they should be applied in the listed order.
+
+## 3.1.1 generate_figures_only_mean_expression_calc.py
+
+```
+Usage:
+  python generate_figures_only_mean_expression_calc.py --in <FILE> --genes <FILE> --samples <FILE> --out <DIR>
+
+  Mandatory:
+  
+  Inputs  
+  --in           STR   path to count table with samples as column names and gene IDs as row names
+  --genes        STR   path to gene ID file, one column with one gene ID per row
+  --samples      STR   path to sample ID file, one column with one sample ID per row. Sample ID must be present in count table
+  
+  Output file
+  --out           STR   output directory
+```
