@@ -136,7 +136,7 @@ Usage:
 	
   Mandatory:
   
-  Input
+  Inputs
   Full paths to the to be filtered pool vcf files need to be specified in the script via their full paths and save in the variables vcf_hp (VCF high pool) and vcf_lp (VCF low pool). The vcf files containing the gold standard variants from the parents need to be specified via their full paths in the script and save in the variables vcf_J and vcf_L.
   
   Output file
