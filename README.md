@@ -27,7 +27,7 @@ Usage:
   --vcf           STR   vcf file containing variants derived from the mapping of parental genotype 1 against B. napus Darmor-bzh
   --cov           STR   coverage file containing read coverage information per position derived from the mapping of parental genotype 2 against B. napus Darmor-bzh
           
-  Output file
+  Output 
   --out           STR   output file
   
   Optional:
@@ -63,7 +63,7 @@ Usage:
   --P1_VCF        STR   vcf file containing the variants filtered for coverage of parental genotype 1 (see 1.1)
   --P2_VCF        STR   vcf file containing the variants filtered for coverage of parental genotype 2 (see 1.1)
           
-  Output directory
+  Output 
   --out           STR   output directory
 ```
 
@@ -81,7 +81,7 @@ Usage:
   --P1_VCF        STR   vcf file containing the variants filtered for homozygosity of parental genotype 1 (see 1.2)
   --P2_VCF        STR   vcf file containing the variants filtered for homozygosity of parental genotype 2 (see 1.2)
           
-  Output directory
+  Output 
   --out           STR   output directory
 ```
 
@@ -98,7 +98,7 @@ Usage:
   --in            STR   path to input folder where vcfs to be combined are located
   --fasta         STR   path to reference genome sequence fasta file
           
-  Output file
+  Output 
   --out           STR   output file
   
   Optional:
@@ -121,7 +121,7 @@ Usage:
   --vcf           STR   vcf file to be sorted by chromosomal position
   --fasta         STR   path to reference genome sequence fasta file
           
-  Output file
+  Output 
   --out           STR   output file, which is a sorted vcf file
 ```
 
@@ -155,7 +155,7 @@ Usage:
   Input  
   --in            STR   path to vcf file folder, which contains the vcf files which are going to be merged
           
-  Output file
+  Output 
   --out           STR   path to output file, which is a merged vcf file
 ```
  
@@ -190,11 +190,26 @@ Usage:
 ## 2.9.2 map_mean_exp_to_cand_genes_in_reg.py
 ## 2.9.3 map_PAVs_to_genes_in_regs.py
 
-### 3.1 RNA-Seq
+### 3.2 RNA-Seq
 
 The scripts belonging to the RNA-Seq analysis are presented here, they should be applied in the listed order.
 
-## 3.1.1 generate_figures_only_mean_expression_calc.py
+## 3.2.1 parse_STAR_log_file_create_mapping_statistic.py
+
+```
+Usage:
+  python parse_STAR_log_file_create_mapping_statistic.py --path_to_log_files <DIR> --out <FILE>
+
+  Mandatory:
+  
+  Inputs  
+  --path_to_log_files           STR   path to directory containing STAR log files
+
+  Output 
+  --out           STR   output file
+```
+
+## 3.2.2 generate_figures_only_mean_expression_calc.py
 
 ```
 Usage:
@@ -207,6 +222,9 @@ Usage:
   --genes        STR   path to gene ID file, one column with one gene ID per row
   --samples      STR   path to sample ID file, one column with one sample ID per row. Sample ID must be present in count table
   
-  Output file
+  Output 
   --out           STR   output directory
 ```
+
+
+## 3.2.3 generate_figures_only_mean_expression_calc.py
