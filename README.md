@@ -125,9 +125,9 @@ Usage:
   --out           STR   output file, which is a sorted vcf file
 ```
 
-### 2.5 Filter raw variants per pool for delta allele frequency calculation - dAF calculation and plotting
+### 2.6 Filter raw variants per pool for delta allele frequency calculation - dAF calculation and plotting
 
-## 2.5.1 filter_pools_vcfs_for_gold_standard.py
+## 2.6.1 filter_pools_vcfs_for_gold_standard.py
 This script filters the pool vcf files for the variants in the gold standard. 
 
 ```
@@ -143,7 +143,7 @@ Usage:
   --out           STR   path to output folder
 ```
 
-## 2.5.2 combine_single_VCFs.py
+## 2.6.2 combine_single_VCFs.py
 This script combines vcf files located in the same folder. 
 
 ```
@@ -158,7 +158,30 @@ Usage:
   Output 
   --out           STR   path to output file, which is a merged vcf file
 ```
- 
+
+### 2.8 Generation of delta allele frequency plots
+
+## 2.8.1 sophisticated_cov_plot.py
+This script generated coverage and delta allele frequency plots. 
+
+```
+Usage:
+  python sophisticated_cov_plot.py --input_vcf <FILE> --input_vcf_sig_SNP <FILE> --in_merged_ori_vcf <FILE> --reference_file <FILE> --high_pool <sample name in VCF; multiple samples names can be provided comma-seperated> --low_pool <sample name in VCF; multiple samples names can be provided comma-seperated> --output_dir <DIR> 
+
+  Mandatory:
+  
+  Input  
+  --input_vcf <FILE> 
+  --input_vcf_sig_SNP <FILE> 
+  --in_merged_ori_vcf <FILE> 
+  --reference_file <FILE> 
+  --high_pool <sample name in VCF; multiple samples names can be provided comma-seperated> 
+  --low_pool <sample name in VCF; multiple samples names can be provided comma-seperated>   
+  
+  Output 
+  --output_dir           STR   path to output directory [will be generated if required]
+```				
+					
 ### 2.6 Interval detection
 
 ## 2.6.1 fisher_exact_test_corrects_for_multiples_testing.py
