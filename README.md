@@ -192,7 +192,7 @@ Usage:
 
 ### 3.2 RNA-Seq
 
-The scripts belonging to the RNA-Seq analysis are presented here, they should be applied in the listed order.
+The scripts belonging to the RNA-Seq analysis are presented here.
 
 ## 3.2.1 parse_STAR_log_file_create_mapping_statistic.py
 
@@ -226,5 +226,19 @@ Usage:
   --out           STR   output directory
 ```
 
+## 3.2.3 map_mean_exp_to_cand_genes_in_reg.py
 
-## 3.2.3 generate_figures_only_mean_expression_calc.py
+```
+Usage:
+  python map_mean_exp_to_cand_genes_in_reg.py --mean_exp_table <FILE> --anno_vars_w_reg <FILE> --out <FILE>
+
+  Mandatory:
+  
+  Inputs  
+  --mean_exp_table        STR   path to count table with samples as column names and gene IDs as row names
+  --anno_vars_w_reg       STR   path to file, containing annotated variants in genomic regions
+  
+  Output 
+  --out           STR   output file
+```
+
