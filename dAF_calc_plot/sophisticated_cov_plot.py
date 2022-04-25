@@ -7,7 +7,7 @@
 # this version will now also include a coverage plot under the x axis
 
 __usage__ = """
-					python dAF_with_unique_and_sig_SNP_v3.py\n
+					python sophisticated_cov_plot.py\n
 					--input_vcf <FILENAME>
 					--input_vcf_sig_SNP <FILENAME>
 					--in_merged_ori_vcf <FILENAME>
