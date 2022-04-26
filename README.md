@@ -261,7 +261,24 @@ Usage:
 ## 3.0 Functional annotation and candidate genes
 
 ### 3.0.1 fetch_gene_IDs_from_gff3_file.py	
+This script calculates the mean expression per candidate gene located in a region.
+	
+```
+Usage:
+  python fetch_gene_IDs_from_gff3_file.py --in <FILE> --anno <FILE> --RBH_BBH_file <FILE> --gff <FILE> --out <DIR>
 
+  Mandatory:
+  
+  Inputs  
+  --in            STR   path to file containing the identified regions
+  --anno          STR   path to functional annotation file from OrthoFinder results
+  --RBH_BBH_file  STR   path to functional annotation file containing (reciprocal) best blast hits
+  --gff           STR   path to GFF file
+	
+  Output 
+  --out           STR   output directory determining the prefix, where the resulting output files will be stored
+```
+	
 ### 3.0.2 map_mean_exp_to_cand_genes_in_reg.py
 This script calculates the mean expression per candidate gene located in a region.
 	
