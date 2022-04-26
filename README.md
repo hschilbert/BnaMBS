@@ -10,11 +10,11 @@ scripts belonging to the GSL, SPC, and SOC mapping-by-sequencing analyses.
 
 Full paths should be used to specify input and output files and folders. Sequence names should not contain white space characters like spaces and TABs. Underscores can be used to replace spaces. All files should be provided in tab separated format.
 
-## 2.4 Generation of the gold standard 
+## 2.5 Generation of the gold standard 
 
 The scripts belonging to the generation of the gold standard are marked with a 1., they should be applied in the listed order.
 
-### 2.4.1 filter_parent_variants.py
+### 2.5.1 filter_parent_variants.py
 This script filters for high quality variants by applying coverage filters. 
 
 ```
@@ -50,7 +50,7 @@ Usage:
 `--black_vcf` vcf file containing BOAS
 
 
-### 2.4.2 combine_homo_VCFs_vs_Bn41.py
+### 2.5.2 combine_homo_VCFs_vs_Bn41.py
 This script filters for homozygous variants which are unique per parental genotype. Triallelic variants and variants present in both parents were excluded from further analyses as these are not contrasting between the pools.
 
 ```
@@ -67,7 +67,7 @@ Usage:
   --out           STR   output directory
 ```
 
-### 2.4.3 filter_vcf_F1.py
+### 2.5.3 filter_vcf_F1.py
 This script uses the set of homozygous SNVs in the parents and further screens the set for heterozygosity in a reconstituted F1 population. The reconstituted F1 variant set comprises variants derived from all analysed genomic sequencing data of our study. Heterozygous variants are defined as having an allele frequency between 0.2 0.8 against the B. napus reference genome sequence.
 
 ```
@@ -85,7 +85,7 @@ Usage:
   --out           STR   output directory
 ```
 
-### 2.4.4 merge_vcfs.py
+### 2.5.4 merge_vcfs.py
 This script combines the homozygous SNVs of the parents (1.2) with the variants identified to be heterozygous in step 1.3 to generate the final gold standard. 
 
 ```
@@ -108,7 +108,7 @@ Usage:
 
 `--sort_script` full path to sort_vcf_by_fasta.py can be provided. If this parameter is not used sort_vcf_by_fasta.py should be located in the working directory.
 
-### 2.4.5 sort_vcf_by_fasta.py
+### 2.5.5 sort_vcf_by_fasta.py
 This script sorts a vcf file based on a reference genome sequence. 
 
 ```
@@ -125,7 +125,7 @@ Usage:
   --out           STR   output file, which is a sorted vcf file
 ```
 
-## 2.6 Filter raw variants per pool for delta allele frequency calculation - dAF calculation and plotting
+## 2.6 Filter raw variants per pool for delta allele frequency calculation
 
 ### 2.6.1 filter_pools_vcfs_for_gold_standard.py
 This script filters the pool vcf files for the variants in the gold standard. 
@@ -157,31 +157,62 @@ Usage:
           
   Output 
   --out           STR   path to output file, which is a merged vcf file
-```
-
-				
+```			
 					
-## 2.6 Interval detection
+## 2.7 Interval detection
 
-### 2.6.1 fisher_exact_test_corrects_for_multiples_testing.py
+### 2.7.1 fisher_exact_test_corrects_for_multiples_testing.py
 This script identifies “statistically meaningful differential Allele specific Read Counts” (dARCs). For the interval detection Fisher’s exact test was applied on the raw SNVs of the pools to yield variants with a significant delta allele frequency. A p-value cut-off of 0.05 was applied after correction for multiple testing. The passing SNVs are called “statistically meaningful differential Allele specific Read Counts” (dARCs).
 
+```
+Usage:
+  python fisher_exact_test_corrects_for_multiples_testing.py --in <FILE> --sig <INTEGER> --pool1 <COMMA_SEPARATED_LIST_OF_SAMPLES> --pool2 <COMMA_SEPARATED_LIST_OF_SAMPLES> --out <FILE>
 
-### 2.6.2 get_intervals_based_on_dARCs_Bn41_v4.py
+  Mandatory:
+  
+  Input  
+  --in          STR   path to vcf file
+  --sig		INT   integer setting the significant level alpha [0.05] 
+  --pool1       STR   list of samples, comma seperated
+  --pool2       STR   list of samples, comma seperated
+          
+  Output 
+  --out       	STR   path to output file
+```
+					
+### 2.7.2 get_intervals_based_on_dARCs_Bn41_v4.py
 This script identifies genomic intervals based on dARCs were used to identify genomic intervals associated with the analyzed traits 
 
 
-### 2.6.3 PAV_finder.py 
+### 2.7.3 PAV_finder.py 
 This script identifies I) Zero coverage regions (ZCRs) by using the coverage information of both pools and applying a genome wide screening with a window size of 200 bp per chromosome. ZCRs are considered during the interval detection, as they are often responsible for the splitting of genomic intervals into parts. Where an interval is missing in both pools compared to the Darmor bzh reference genome sequence, no variants and hence no dARCs can be detected. 
 
 This script identifies II) presence absence variants (PAVs). First, the average coverage per gene region per pool was calculated by calculating the mean of all coverage values per gene region. Next, a minimum coverage cut off was applied (-mincov 10) by ensuring that the sum of the average coverage for each gene region of both pools need to be greater than 10. This step was done to insure that the gene region is present in at least one pool. If no coverage was detected for one gene region of one pool, the coverage was set to 0.01. The average coverage was then normalized to the overall coverage of a sample by dividing through the median of all mean coverage values of a sample. Next, the log2 of the normalized coverage values of one gene region derived from both pools was calculated. Then high quality PAVs were extracted by filtering with an absolute value of log2(normalized coverage of gene region X of pool 1 / normalized coverage of gene region X of pool 2) > 1 and an absolute z score of > 1.5 and the normalized coverage value of at least one pool must be < 0.4 to insure a very low coverage alias absence of this gene region (github PAV_parser_genes.py)
 
 ```
 Usage:
-  python PAV_finder.py 
+  python PAV_finder.py --cov1 <FILE> --cov2 <FILE> --out <DIR>
 
+  Mandatory:
+  
+  Input  
+  --in          STR   path to vcf file
+
+  --cov1        STR   path to coverage file derived from one pool mapping 
+  --cov2        STR   path to coverage file derived from the other pool mapping 
+  
+  Optional:
+  --mode        STR   mode of PAV detection (gene|genomic|zcr)>[genomic]
+  --gff         STR   gff annotation file, necessary if gene mode is chosen [none]
+  --anno        STR   functional annotation file [none]
+  --mincov      STR   minimal combined coverage of both samples per gene [-1]
+  --blocksize   INT   size for genomic PAC or ZCR detection [3000]
+  --maxrelcov   INT   relative coverage cutoff of ZCR detection [0.1]
+	
+  Output 
+  --out       	STR   path to output directory
+					
 ```
-
 
 ## 2.7 Generation of delta allele frequency plots
 
