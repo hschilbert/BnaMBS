@@ -235,8 +235,6 @@ Usage:
 					
 ```
 
-## 2.7 Generation of delta allele frequency plots
-
 ## 2.8 Generation of delta allele frequency plots
 
 ### 2.8.1 sophisticated_cov_plot.py
@@ -260,18 +258,37 @@ Usage:
   --output_dir           STR   path to output directory [will be generated if required]
 ```
 
-## 2.9 Functional annotation and candidate genes
+## 3.0 Functional annotation and candidate genes
 
-### 2.9.1 fetch_gene_IDs_from_gff3_file.py
-### 2.9.2 map_mean_exp_to_cand_genes_in_reg.py
-### 2.9.3 map_PAVs_to_genes_in_regs.py
+### 3.0.1 fetch_gene_IDs_from_gff3_file.py	
 
+### 3.0.2 map_mean_exp_to_cand_genes_in_reg.py
+This script calculates the mean expression per candidate gene located in a region.
+	
+```
+Usage:
+  python map_mean_exp_to_cand_genes_in_reg.py --mean_exp_table <FILE> --anno_vars_w_reg <FILE> --out <FILE>
+
+  Mandatory:
+  
+  Inputs  
+  --mean_exp_table        STR   path to count table with samples as column names and gene IDs as row names
+  --anno_vars_w_reg       STR   path to file, containing annotated variants in genomic regions
+  
+  Output 
+  --out           STR   output file
+```
+
+### 3.0.3 map_PAVs_to_genes_in_regs.py
+
+	
 ## 3.2 RNA-Seq
 
 The scripts belonging to the RNA-Seq analysis are presented here.
 
 ### 3.2.1 parse_STAR_log_file_create_mapping_statistic.py
-
+This scripts combines the STAR mapping statistics of several STAR mappings into one file.
+	
 ```
 Usage:
   python parse_STAR_log_file_create_mapping_statistic.py --path_to_log_files <DIR> --out <FILE>
@@ -286,6 +303,7 @@ Usage:
 ```
 
 ### 3.2.2 generate_figures_only_mean_expression_calc.py
+This scripts generate plots based on RNA-Seq data.
 
 ```
 Usage:
@@ -300,21 +318,5 @@ Usage:
   
   Output 
   --out           STR   output directory
-```
-
-### 3.2.3 map_mean_exp_to_cand_genes_in_reg.py
-
-```
-Usage:
-  python map_mean_exp_to_cand_genes_in_reg.py --mean_exp_table <FILE> --anno_vars_w_reg <FILE> --out <FILE>
-
-  Mandatory:
-  
-  Inputs  
-  --mean_exp_table        STR   path to count table with samples as column names and gene IDs as row names
-  --anno_vars_w_reg       STR   path to file, containing annotated variants in genomic regions
-  
-  Output 
-  --out           STR   output file
 ```
 
