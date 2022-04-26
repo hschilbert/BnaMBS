@@ -3,7 +3,7 @@
 ### v0.1 ###
 
 __usage__ = """
-					python map_mean_exp_to_cand_genes_in_reg.py \
+					python map_PAVs_to_genes_in_regs.py  \
 					--PAVs	<PAVs_FILE>
 					--out <PATH_TO_OUTPUT_FILE>
 					
