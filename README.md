@@ -281,6 +281,17 @@ Usage:
 
 ### 3.0.3 map_PAVs_to_genes_in_regs.py
 
+## 3.1 Variant impact prediction via SnpEff
+
+### 3.1.1 combine_single_VCFs_for_SnpEff.py
+This script combines VCF files for SnpEff analysis.
+	
+```
+Usage:
+  python combine_single_VCFs_for_SnpEff.py 
+
+
+```	
 	
 ## 3.2 RNA-Seq
 
