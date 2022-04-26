@@ -3,7 +3,7 @@
 ### v0.4 ###
 
 __usage__ = """
-					python get_intervals_based_on_sig_snps.py
+					python get_intervals_based_on_dARCs_Bn41_v4.py
 					--sig_snp_vcf <FULL_PATH_TO_SIG_SNPS_VCF_FILE>
 					--snp_eff_res <FULL_PATH_TO_SNPEFF_RES>
 					--out <FULL_PATH_TO_OUTPUT_FOLDER>
