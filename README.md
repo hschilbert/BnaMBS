@@ -159,28 +159,7 @@ Usage:
   --out           STR   path to output file, which is a merged vcf file
 ```
 
-## 2.8 Generation of delta allele frequency plots
-
-### 2.8.1 sophisticated_cov_plot.py
-This script generated coverage and delta allele frequency plots. 
-
-```
-Usage:
-  python sophisticated_cov_plot.py --input_vcf <FILE> --input_vcf_sig_SNP <FILE> --in_merged_ori_vcf <FILE> --reference_file <FILE> --high_pool <sample name in VCF; multiple samples names can be provided comma-seperated> --low_pool <sample name in VCF; multiple samples names can be provided comma-seperated> --output_dir <DIR> 
-
-  Mandatory:
-  
-  Input  
-  --input_vcf <FILE> 
-  --input_vcf_sig_SNP <FILE> 
-  --in_merged_ori_vcf <FILE> 
-  --reference_file <FILE> 
-  --high_pool <sample name in VCF; multiple samples names can be provided comma-seperated> 
-  --low_pool <sample name in VCF; multiple samples names can be provided comma-seperated>   
-  
-  Output 
-  --output_dir           STR   path to output directory [will be generated if required]
-```				
+				
 					
 ## 2.6 Interval detection
 
@@ -206,6 +185,28 @@ Usage:
 
 ## 2.7 Generation of delta allele frequency plots
 
+## 2.8 Generation of delta allele frequency plots
+
+### 2.8.1 sophisticated_cov_plot.py
+This script generates coverage and delta allele frequency plots. 
+
+```
+Usage:
+  python sophisticated_cov_plot.py --input_vcf <FILE> --input_vcf_sig_SNP <FILE> --in_merged_ori_vcf <FILE> --reference_file <FILE> --high_pool <sample name in VCF; multiple samples names can be provided comma-seperated> --low_pool <sample name in VCF; multiple samples names can be provided comma-seperated> --output_dir <DIR> 
+
+  Mandatory:
+  
+  Input  
+  --input_vcf <FILE> 
+  --input_vcf_sig_SNP <FILE> 
+  --in_merged_ori_vcf <FILE> 
+  --reference_file <FILE> 
+  --high_pool <sample name in VCF; multiple samples names can be provided comma-seperated> 
+  --low_pool <sample name in VCF; multiple samples names can be provided comma-seperated>   
+  
+  Output 
+  --output_dir           STR   path to output directory [will be generated if required]
+```
 
 ## 2.9 Functional annotation and candidate genes
 
