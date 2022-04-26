@@ -280,7 +280,7 @@ Usage:
 ```
 	
 ### 3.0.2 map_mean_exp_to_cand_genes_in_reg.py
-This script calculates the mean expression per candidate gene located in a region.
+This script adds the mean expression values to each (candidate) gene located in a region. 
 	
 ```
 Usage:
@@ -297,7 +297,25 @@ Usage:
 ```
 
 ### 3.0.3 map_PAVs_to_genes_in_regs.py
+This script adds the PAV values to each (candidate) gene located in a region. 
+	
+```
+Usage:
+  python map_PAVs_to_genes_in_regs.py --PAVs <FILE> --anno_vars_w_reg_w_mean_exp <FILE> --genes_in_regions <FILE> --out <FILE> 
 
+  Mandatory:
+  
+  Inputs  
+  --PAVs                         STR   path to PAV file derived from PAV_finder.py
+ 
+  additionally requires one of these files:
+  --anno_vars_w_reg_w_mean_exp   STR   path to file, containing annotated variants with mean expression values in genomic regions
+  --genes_in_regions             STR   path to file, containing (candidate) genes in genomic regions
+	
+  Output 
+  --out                          STR   output file
+```
+	
 ## 3.1 Variant impact prediction via SnpEff
 
 ### 3.1.1 combine_single_VCFs_for_SnpEff.py
