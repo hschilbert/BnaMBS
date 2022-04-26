@@ -206,7 +206,7 @@ Usage:
   --gff         STR   gff annotation file, necessary if gene mode is chosen [none]
   --anno        STR   functional annotation file [none]
   --mincov      STR   minimal combined coverage of both samples per gene [-1]
-  --blocksize   INT   size for genomic PAC or ZCR detection [3000]
+  --blocksize   INT   size for genomic PAV or ZCR detection [3000]
   --maxrelcov   INT   relative coverage cutoff of ZCR detection [0.1]
 	
   Output 
