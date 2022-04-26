@@ -36,7 +36,6 @@ Usage:
   --min_cov_vcf   INT   minimal read coverage at one position in the vcf file [10]
   --max_cov_vcf   INT   maximal read coverage at one position in the vcf file [100]
   --black_vcf     STR   vcf file BOAS
-
 ```
 
 `--vcf` vcf file containing variants derived from the mapping of parental genotype 1 against B. napus Darmor-bzh.
@@ -103,7 +102,6 @@ Usage:
   
   Optional:
   --sort_script   STR   path to sort script sort_vcf_by_fasta.py 
-  
 ```
 
 `--sort_script` full path to sort_vcf_by_fasta.py can be provided. If this parameter is not used sort_vcf_by_fasta.py should be located in the working directory.
@@ -231,8 +229,7 @@ Usage:
   --maxrelcov   INT   relative coverage cutoff of ZCR detection [0.1]
 	
   Output 
-  --out       	STR   path to output directory
-					
+  --out       	STR   path to output directory					
 ```
 
 ## 2.8 Generation of delta allele frequency plots
@@ -319,13 +316,17 @@ Usage:
 ## 3.1 Variant impact prediction via SnpEff
 
 ### 3.1.1 combine_single_VCFs_for_SnpEff.py
-This script combines VCF files for SnpEff analysis.
+This script combines VCF files in a folder for SnpEff analysis.
 	
 ```
 Usage:
-  python combine_single_VCFs_for_SnpEff.py 
+  python combine_single_VCFs_for_SnpEff.py --in <DIR> --out <FILE>
+	
+  Inputs  
+  --path_to_log_files   STR   path to directory containing VCF files
 
-
+  Output 
+  --out                 STR   output file
 ```	
 	
 ## 3.2 RNA-Seq
@@ -342,10 +343,10 @@ Usage:
   Mandatory:
   
   Inputs  
-  --path_to_log_files           STR   path to directory containing STAR log files
+  --path_to_log_files  STR   path to directory containing STAR log files
 
   Output 
-  --out           STR   output file
+  --out                STR   output file
 ```
 
 ### 3.2.2 generate_figures_only_mean_expression_calc.py
