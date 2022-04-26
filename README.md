@@ -181,8 +181,29 @@ Usage:
 ```
 					
 ### 2.7.2 get_intervals_based_on_dARCs_Bn41_v4.py
-This script identifies genomic intervals based on dARCs were used to identify genomic intervals associated with the analyzed traits 
+This script identifies genomic intervals based on dARCs were used to identify genomic intervals associated with the analyzed traits. The dARCs derived from fisher_exact_test_corrects_for_multiples_testing.py were used to identify genomic intervals associated with the analyzed traits. The following criteria were applied: I) The minimum amount of dARCs in an interval is 4 (--min_nr_dARCs_in_reg), II) the distance between at least 3 dARCs of one interval is greater than 1 kbp (--dis_in_reg), and III) distance between any two adjacent dARCs is < 50 kbp (--dis_out_reg). While a certain number of dARCs is required to seed an interval, it is also important that these are equally distributed. Numerous variants originating from the same sequenced DNA fragment could be due to an artifact and are excluded by requiring a minimal distance of the seed dARCs. To avoid extremely large intervals with low dARC frequencies between dARC rich intervals, the 50 kbp cut off for the dARC distance is intended to split intervals without a constantly high dARC density. ZCRs (as extracted by PAV_finder.py) are considered during the interval detection, as they are often responsible for the splitting of genomic intervals into parts.
+						
+```
+Usage:
+  python get_intervals_based_on_dARCs_Bn41_v4.py --sig_snp_vcf <FILE> --snp_eff_res <FILE> --anno <FILE> --ZCR <FILE>
+  --dis_out_reg <INT> --min_nr_sig_snvs_in_reg <INT> --dis_in_reg <INT> --out <DIR>
+					
+  Mandatory:
+  
+  Input  
+  --sig_snp_vcf              STR    path to VCF file containing dARCs from fisher_exact_test_corrects_for_multiples_testing.py
+  --snp_eff_res              STR    path to SnpEff result file
+  --ZCR                      STR    path to ZCR file derived from PAV_finder.py 
+  --dis_out_reg              INT    set distance in base pairs between stand alone dARCs (SNVs) and a region 
+  --min_nr_sig_snvs_in_reg   INT    set minimum number of dARCs (SNVs) in a region 
+  --dis_in_reg               INT    set distance in base pairs of dARCs (SNVs) in a region
+  
+  Optional:
+  --anno        STR   functional annotation file [none]
 
+  Output 
+  --out       	STR   path to output directory
+```	
 
 ### 2.7.3 PAV_finder.py 
 This script identifies I) Zero coverage regions (ZCRs) by using the coverage information of both pools and applying a genome wide screening with a window size of 200 bp per chromosome. ZCRs are considered during the interval detection, as they are often responsible for the splitting of genomic intervals into parts. Where an interval is missing in both pools compared to the Darmor bzh reference genome sequence, no variants and hence no dARCs can be detected. 
