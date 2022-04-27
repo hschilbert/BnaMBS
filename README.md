@@ -12,7 +12,7 @@ Full paths should be used to specify input and output files and folders. Sequenc
 
 ## 2.5 Generation of the gold standard 
 
-The scripts belonging to the generation of the gold standard are marked with a 1., they should be applied in the listed order.
+The scripts belonging to the generation of the gold standard. They should be applied in the listed order.
 
 ### 2.5.1 filter_parent_variants.py
 This script filters for high quality variants by applying coverage filters. 
