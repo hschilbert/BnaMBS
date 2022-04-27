@@ -85,7 +85,7 @@ Usage:
 ```
 
 ### 2.5.4 merge_vcfs.py
-This script combines the homozygous SNVs of the parents (1.2) with the variants identified to be heterozygous in step 1.3 to generate the final gold standard. 
+This script combines the homozygous SNVs of the parents (combine_homo_VCFs_vs_Bn41.py) with the variants identified to be heterozygous (filter_vcf_F1.py) to generate the final gold standard. 
 
 ```
 Usage:
