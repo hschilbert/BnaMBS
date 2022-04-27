@@ -59,8 +59,8 @@ Usage:
   Mandatory:
   
   Inputs 
-  --P1_VCF        STR   vcf file containing the variants filtered for coverage of parental genotype 1 (see 1.1)
-  --P2_VCF        STR   vcf file containing the variants filtered for coverage of parental genotype 2 (see 1.1)
+  --P1_VCF        STR   vcf file containing the variants filtered for coverage of parental genotype 1 derived from filter_parent_variants.py
+  --P2_VCF        STR   vcf file containing the variants filtered for coverage of parental genotype 2 derived from filter_parent_variants.py
           
   Output 
   --out           STR   output directory
