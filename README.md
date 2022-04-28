@@ -21,8 +21,8 @@ Usage:
   Mandatory:
   
   Inputs 
-  --vcf           STR   vcf file containing variants derived from the mapping of parental genotype 1 against _B. napus_ Darmor-bzh
-  --cov           STR   coverage file containing read coverage information per position derived from the mapping of parental genotype 2 against _B. napus_ Darmor-bzh
+  --vcf           STR   vcf file containing variants derived from the mapping of parental genotype 1 against B. napus Darmor-bzh
+  --cov           STR   coverage file containing read coverage information per position derived from the mapping of parental genotype 2 against B. napus Darmor-bzh
           
   Output 
   --out           STR   output file
