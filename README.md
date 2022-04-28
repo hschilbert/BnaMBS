@@ -16,7 +16,7 @@ This script filters for high quality variants by applying coverage filters.
 
 ```
 Usage:
-  python filter_parent_variants.py --vcf <FILE> --cov <FILE> --out <FILE> --min_cov_cov <INT> --max_cov_cov <INT> --min_cov_vcf <INT> --max_cov_vcf <INT> --black_vcf <FILE>
+  python filter_parent_variants.py --vcf <FILE> --cov <FILE> --out <FILE> 
 
   Mandatory:
   
@@ -32,7 +32,7 @@ Usage:
   --max_cov_cov   INT   maximal read coverage at one position in the bam file [100]
   --min_cov_vcf   INT   minimal read coverage at one position in the vcf file [10]
   --max_cov_vcf   INT   maximal read coverage at one position in the vcf file [100]
-  --black_vcf     STR   vcf file BOAS
+  --black_vcf     STR   vcf file 
 ```
 
 `--vcf` vcf file containing variants derived from the mapping of parental genotype 1 against *B. napus* Darmor-bzh.
@@ -43,7 +43,7 @@ Usage:
 
 `--min_cov_cov`, `--max_cov_cov`, `--min_cov_vcf`, `--max_cov_vcf` integers should be given for these parameters determining the filter threshold based on the files given in `--cov` and `--vcf`, respectively.
 
-`--black_vcf` vcf file containing BOAS
+`--black_vcf` vcf file containing variants which should not be incoporated in the final result file
 
 
 ### 2.5.2 combine_homo_VCFs_vs_Bn41.py
@@ -180,7 +180,7 @@ This script identifies genomic intervals based on dARCs were used to identify ge
 						
 ```
 Usage:
-  python get_intervals_based_on_dARCs_Bn41_v4.py --sig_snp_vcf <FILE> --snp_eff_res <FILE> --anno <FILE> --ZCR <FILE>
+  python get_intervals_based_on_dARCs_Bn41_v4.py --sig_snp_vcf <FILE> --snp_eff_res <FILE> --ZCR <FILE>
   --dis_out_reg <INT> --min_nr_sig_snvs_in_reg <INT> --dis_in_reg <INT> --out <DIR>
 					
   Mandatory:
@@ -207,7 +207,7 @@ This script identifies II) presence absence variants (PAVs). First, the average 
 
 ```
 Usage:
-  python PAV_finder.py --cov1 <FILE> --cov2 <FILE> --out <DIR>
+  python PAV_finder.py --in <FILE> --cov1 <FILE> --cov2 <FILE> --out <DIR>
 
   Mandatory:
   
@@ -241,15 +241,15 @@ Usage:
   Mandatory:
   
   Input  
-  --input_vcf <FILE> 
-  --input_vcf_sig_SNP <FILE> 
-  --in_merged_ori_vcf <FILE> 
-  --reference_file <FILE> 
-  --high_pool <sample name in VCF; multiple samples names can be provided comma-seperated> 
-  --low_pool <sample name in VCF; multiple samples names can be provided comma-seperated>   
+  --input_vcf          STR   
+  --input_vcf_sig_SNP  STR   
+  --in_merged_ori_vcf  STR     
+  --reference_file     STR   
+  --high_pool          STR   sample name in VCF; multiple samples names can be provided comma-seperated
+  --low_pool           STR   sample name in VCF; multiple samples names can be provided comma-seperated  
   
   Output 
-  --output_dir           STR   path to output directory [will be generated if required]
+  --output_dir         STR   path to output directory [will be generated if required]
 ```
 
 ## 3.0 Functional annotation and candidate genes
