@@ -64,7 +64,7 @@ Usage:
 ```
 
 ### 2.5.3 filter_vcf_F1.py
-This script uses the set of homozygous SNVs in the parents and further screens the set for heterozygosity in a reconstituted F1 population. The reconstituted F1 variant set comprises variants derived from all analysed genomic sequencing data of our study. Heterozygous variants are defined as having an allele frequency between 0.2-0.8 against the B. napus reference genome sequence.
+This script uses the set of homozygous SNVs in the parents and further screens the set for heterozygosity in a reconstituted F1 population. The reconstituted F1 variant set comprises variants derived from all analysed genomic sequencing data of our study. Heterozygous variants are defined as having an allele frequency between 0.2-0.8 against the *B. napus* reference genome sequence.
 
 ```
 Usage:
