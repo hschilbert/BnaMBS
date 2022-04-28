@@ -21,8 +21,8 @@ Usage:
   Mandatory:
   
   Inputs 
-  --vcf           STR   vcf file containing variants derived from the mapping of parental genotype 1 against B. napus Darmor-bzh
-  --cov           STR   coverage file containing read coverage information per position derived from the mapping of parental genotype 2 against B. napus Darmor-bzh
+  --vcf           STR   vcf file containing variants derived from the mapping of parental genotype 1 against *B. napus* Darmor-bzh
+  --cov           STR   coverage file containing read coverage information per position derived from the mapping of parental genotype 2 against *B. napus* Darmor-bzh
           
   Output 
   --out           STR   output file
@@ -35,9 +35,9 @@ Usage:
   --black_vcf     STR   vcf file BOAS
 ```
 
-`--vcf` vcf file containing variants derived from the mapping of parental genotype 1 against B. napus Darmor-bzh.
+`--vcf` vcf file containing variants derived from the mapping of parental genotype 1 against *B. napus* Darmor-bzh.
 
-`--cov` coverage file containing read coverage information per position derived from the mapping of parental genotype 2 against B. napus Darmor-bzh.
+`--cov` coverage file containing read coverage information per position derived from the mapping of parental genotype 2 against *B. napus* Darmor-bzh.
 
 `--out` specify the output file where the filtered variants will be stored.
 
