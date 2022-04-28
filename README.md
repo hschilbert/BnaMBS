@@ -207,13 +207,11 @@ This script identifies II) presence absence variants (PAVs). First, the average 
 
 ```
 Usage:
-  python PAV_finder.py --in <FILE> --cov1 <FILE> --cov2 <FILE> --out <DIR>
+  python PAV_finder.py --cov1 <FILE> --cov2 <FILE> --out <DIR>
 
   Mandatory:
   
   Input  
-  --in          STR   path to vcf file
-
   --cov1        STR   path to coverage file derived from one pool mapping 
   --cov2        STR   path to coverage file derived from the other pool mapping 
   
@@ -241,10 +239,10 @@ Usage:
   Mandatory:
   
   Input  
-  --input_vcf          STR   
-  --input_vcf_sig_SNP  STR   
-  --in_merged_ori_vcf  STR     
-  --reference_file     STR   
+  --input_vcf          STR   path to VCF file
+  --input_vcf_sig_SNP  STR   path to VCF file containing dARCs from fisher_exact_test_corrects_for_multiples_testing.py
+  --in_merged_ori_vcf  STR   path to VCF file
+  --reference_file     STR   FASTA file containing the genome sequence of B. napus Darmor-bzh
   --high_pool          STR   sample name in VCF; multiple samples names can be provided comma-seperated
   --low_pool           STR   sample name in VCF; multiple samples names can be provided comma-seperated  
   
