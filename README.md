@@ -1,3 +1,9 @@
+
+
+[![DOI](https://zenodo.org/badge/381043611.svg)](https://zenodo.org/badge/latestdoi/381043611)
+
+
+
 # BnaMBS
 scripts belonging to the GSL, SPC, and SOC mapping-by-sequencing analyses. Numbering of chapters correspond to numbering in the publication in the material and method section. These scripts were deposited for documentation of the technical details of a specific project, but might not work on other data sets without modification.
 
