@@ -5,7 +5,9 @@
 
 
 # BnaMBS
-scripts belonging to the GSL, SPC, and SOC mapping-by-sequencing analyses. Numbering of chapters correspond to numbering in the publication in the material and method section. These scripts were deposited for documentation of the technical details of a specific project, but might not work on other data sets without modification.
+scripts belonging to the GSL, SPC, and SOC mapping-by-sequencing publication. Numbering of chapters correspond to numbering in the publication in the material and method section. These scripts were deposited for documentation of the technical details of a specific project, but might not work on other data sets without modification.
+
+Please cite the corresponding publication "Mapping-by-Sequencing Reveals Genomic Regions Associated with Seed Quality Parameters in Brassica napus" by Schilbert et al. 2022 (https://doi.org/10.3390/genes13071131), when using one of these script.
 
 ## Usage
 
